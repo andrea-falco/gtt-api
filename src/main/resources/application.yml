@@ -1,8 +1,35 @@
 server:
-  port: #INSERT_SERVER_PORT_HERE
+  port: 9090
 
 spring:
   datasource:
     url: #INSERT_DB_URL_HERE
     username: #INSERT_DB_USERNAME_HERE
     password: #INSERT_DB_PASSWORD_HERE
+
+logging:
+  level:
+    xyz.andreafalco.gttrestapi.service.GttParserService: DEBUG
+
+gtt:
+  parser:
+    request:
+      url: "https://www.gtt.to.it/cms/percorari/arrivi"
+      queryParameter: "palina"
+    query:
+      stopElement: "p span[class='lead']"
+      stopName: "span[class='lead'] strong u"
+      stopRegex: "^(.+) - (.+)$"
+      stopAreaElement: "em"
+      stopAccessibleElement: "img"
+      stopAccessibleAttribute: "src"
+      stopAccessibleAttributeKeyword: "ico_disabili_blu_g.png"
+      tableRows: "table[class='table table-striped table-hover'] tbody tr"
+      lineNumber: "td a"
+      lineDestination: "td"
+      scheduledTimes: "td span[class='transiti_container']"
+      realtimeTimes: "td span"
+      realtimeChar: "*"
+      timesSplit: " "
+      accessibleAttrName: "class"
+      accessibleAttrValue: "si-acc"
