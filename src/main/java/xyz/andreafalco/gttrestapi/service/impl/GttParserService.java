@@ -1,4 +1,4 @@
-package xyz.andreafalco.gttrestapi.service;
+package xyz.andreafalco.gttrestapi.service.impl;
 
 import lombok.Data;
 import lombok.Setter;
@@ -11,6 +11,7 @@ import org.jsoup.select.Elements;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Service;
 import xyz.andreafalco.gttrestapi.model.dto.*;
+import xyz.andreafalco.gttrestapi.service.GttService;
 
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;

@@ -9,7 +9,7 @@ spring:
 
 logging:
   level:
-    xyz.andreafalco.gttrestapi.service.GttParserService: DEBUG
+    xyz.andreafalco.gttrestapi.service.impl.GttParserService: DEBUG
 
 gtt:
   parser:
