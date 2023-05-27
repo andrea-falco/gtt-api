@@ -14,6 +14,8 @@ logging:
     xyz.andreafalco.gttrestapi.service.impl.GttParserService: DEBUG
 
 gtt:
+  api:
+    log: true
   parser:
     request:
       url: "https://www.gtt.to.it/cms/percorari/arrivi"
