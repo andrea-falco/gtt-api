@@ -6,6 +6,8 @@ spring:
     url: #INSERT_DB_URL_HERE
     username: #INSERT_DB_USERNAME_HERE
     password: #INSERT_DB_PASSWORD_HERE
+  jpa:
+    show-sql: true
 
 logging:
   level:
