@@ -204,8 +204,8 @@ public class GttParserService implements GttService {
     private boolean timetableIsEmpty(Timetable timetable) {
         return Objects.isNull(timetable)
                 || Objects.isNull(timetable.getLine())
-                || StringUtils.hasText(timetable.getLine().getNumber())
-                || StringUtils.hasText(timetable.getLine().getDestination());
+                || !StringUtils.hasText(timetable.getLine().getNumber())
+                || !StringUtils.hasText(timetable.getLine().getDestination());
     }
 
     @Data
