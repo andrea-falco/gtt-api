@@ -10,6 +10,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 import xyz.andreafalco.gttrestapi.model.dto.*;
 import xyz.andreafalco.gttrestapi.service.GttService;
 
@@ -203,8 +204,8 @@ public class GttParserService implements GttService {
     private boolean timetableIsEmpty(Timetable timetable) {
         return Objects.isNull(timetable)
                 || Objects.isNull(timetable.getLine())
-                || Objects.isNull(timetable.getLine().getNumber())
-                || Objects.isNull(timetable.getLine().getDestination());
+                || StringUtils.hasText(timetable.getLine().getNumber())
+                || StringUtils.hasText(timetable.getLine().getDestination());
     }
 
     @Data
