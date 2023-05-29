@@ -23,7 +23,7 @@ select  r.id, l.number, l.destination,
                 else ''
             end,
             ' - '
-        )
+        ) times
 from	gtt_request r
         join gtt_request_timetable rtt on rtt.request_id = r.id
         join gtt_timetable tt on tt.id = rtt.timetable_id
