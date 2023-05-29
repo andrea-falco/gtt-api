@@ -2,6 +2,12 @@ server:
   port: 9090
   shutdown: graceful
 
+management:
+  endpoint:
+    health:
+      probes:
+        enabled: true
+
 spring:
   datasource:
     url: #INSERT_DB_URL_HERE
