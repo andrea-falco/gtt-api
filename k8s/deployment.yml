@@ -19,3 +19,15 @@ spec:
       containers:
         - name: gtt-rest-api
           image: example_image_tag #INSERT_IMAGE_TAG_HERE
+          livenessProbe:
+            initialDelaySeconds: 10
+            periodSeconds: 5
+            httpGet:
+              path: /actuator/health/liveness
+              port: 9090
+          readinessProbe:
+            initialDelaySeconds: 10
+            periodSeconds: 5
+            httpGet:
+              path: /actuator/health/readiness
+              port: 9090
