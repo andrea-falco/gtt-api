@@ -5,7 +5,8 @@ truncate table gtt_request;
 select  r.id, r.timestamp, s."number", s."name", s.area, s.accessible
 from    gtt_request r
         join gtt_request_stop rs on rs.request_id = r.id
-        join gtt_stop s ON s.id = rs.stop_id;
+        join gtt_stop s ON s.id = rs.stop_id
+order by r.timestamp desc;
 
 -- Request -> Timetables
 select  r.id, l.number, l.destination,
