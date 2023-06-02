@@ -1,11 +1,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: gtt-rest-api-deploy
+  name: gtt-rest-api
+  namespace: gtt
   labels:
     app: gtt-rest-api
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: gtt-rest-api
@@ -17,16 +18,16 @@ spec:
       imagePullSecrets:
         - name: example_secret #INSERT_SECRET_NAME_HERE
       containers:
-        - name: gtt-rest-api
+        - name: rest-api
           image: example_image_tag #INSERT_IMAGE_TAG_HERE
           livenessProbe:
-            initialDelaySeconds: 120
+            initialDelaySeconds: 60
             periodSeconds: 5
             httpGet:
               path: /actuator/health/liveness
               port: 9090
           readinessProbe:
-            initialDelaySeconds: 120
+            initialDelaySeconds: 60
             periodSeconds: 5
             httpGet:
               path: /actuator/health/readiness
