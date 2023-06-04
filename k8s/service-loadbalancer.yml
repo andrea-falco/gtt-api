@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: gtt-rest-api-loadbalancer
+  namespace: gtt
+spec:
+  type: LoadBalancer
+  selector:
+    app: gtt-rest-api
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 9090
